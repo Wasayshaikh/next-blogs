@@ -5,21 +5,27 @@ import Head from 'next/head'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
   return (
     <>
       <Head>
         <title>Coder Space</title>
         <meta name='description' content='Blog post website for coding enthusiast ' />
       </Head>
-      <header>
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>Posts</li>
-            <li>release</li>
-          </ul>
-        </nav>
-      </header>
+      <div className=' bg-gray-900 w-screen h-[calc(100vh-300px)]'>
+        <div className='w-[1100px] m-auto flex  h-full' >
+          <div className='flex-1 bg-blue-500'>
+            
+          </div>
+          <div className='w-56'>
+            <div className='w-full h-2/4 bg-red-500'>
+
+            </div>
+            <div  className='w-full h-2/4  bg-green-500'></div>
+          </div>
+
+        </div>
+      </div>
     </>
   )
 }
