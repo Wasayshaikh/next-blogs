@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import { cookies } from "next/headers"
 
 const Header = () => {
     const [dropDropStatus, setDropDropStatus] = useState<boolean>(false)
@@ -19,6 +20,7 @@ const Header = () => {
             });
         };
     }, [dropDropStatus]);
+    const authToken = false;
     return (
         <>
 
@@ -108,7 +110,7 @@ const Header = () => {
                         <Link href="contact-us" className="text-sm font-semibold leading-6 text-gray-900">Contact</Link>
                     </div>
                     {
-                        sessionStorage.getItem("_token") ?
+                        authToken ?
                             <>Logged In</>
                             : <>
                                 <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
@@ -158,7 +160,7 @@ const Header = () => {
                                     <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
                                 </div>
                                 {
-                                    sessionStorage.getItem("_token") ?
+                                     authToken ?
                                         <>Logged In</>
                                         : <>
                                             <div className="py-6">
