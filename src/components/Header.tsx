@@ -37,7 +37,7 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
-                       
+
 
                         <a href="/" className="text-sm font-semibold leading-6 text-gray-900">Home</a>
                         {/* <div className="relative">
@@ -107,9 +107,18 @@ const Header = () => {
                         <Link href="authors" className="text-sm font-semibold leading-6 text-gray-900">Authors</Link>
                         <Link href="contact-us" className="text-sm font-semibold leading-6 text-gray-900">Contact</Link>
                     </div>
-                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-                    </div>
+                    {
+                        sessionStorage.getItem("_token") ?
+                            <>Logged In</>
+                            : <>
+                                <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
+                                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900 flex login-btn">
+                                        <span className='w-[70%]'>Log in</span>
+                                        <span className='flex w-[20%] overflow-hidden arrow'><span aria-hidden="true">&rarr;</span><span aria-hidden="true">&rarr;</span></span></a>
+                                </div>
+                            </>
+                    }
+
                 </nav>
                 {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
                 <div className="hidden" role="dialog" aria-modal="true">
@@ -148,9 +157,16 @@ const Header = () => {
                                     <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
                                     <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
                                 </div>
-                                <div className="py-6">
-                                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-                                </div>
+                                {
+                                    sessionStorage.getItem("_token") ?
+                                        <>Logged In</>
+                                        : <>
+                                            <div className="py-6">
+                                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                                            </div>
+                                        </>
+                                }
+
                             </div>
                         </div>
                     </div>
