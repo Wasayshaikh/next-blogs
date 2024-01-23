@@ -29,7 +29,7 @@ export default function Home() {
         <title>Coder Space</title>
         <meta name='description' content='Blog post website for coding enthusiast ' />
       </Head>
-      <div className=' bg-gray-900 w-screen h-[500px] md:h-[600px] lg:h-[600px] xl:h-[calc(100vh-300px)]'>
+      <div className=' bg-gray-900 w-full h-[500px] md:h-[600px] lg:h-[600px] xl:h-[calc(100vh-300px)]'>
         <div className='lg:container m-auto flex  h-full' >
           <div className='w-full lg:w-[70%] xxl:w-[80%] relative'>
             <span className='p-2 block max-w-24 text-white font-bold absolute left-0 top-0 z-10'>Latest</span>
@@ -44,33 +44,33 @@ export default function Home() {
       <div className='flex flex-wrap lg:container m-auto px-4 lg:p-0'>
         <div className='bg-green-400 w-1/3 p-4 h-fit'>
           <div className='py-2'>
-            <div><h3 className='text-lg'>{blogs.data[0].title}</h3></div>
-            <div><p className='text-justify'>{blogs.data[0].content}</p></div>
+            <div><h3 className='text-lg'>{blogs == null? (<>loading</>):blogs.data[0].title}</h3></div>
+            <div><p className='text-justify'>{blogs == null? (<>loading</>):blogs.data[0].content}</p></div>
           </div>
           <div className='py-2'>
-            <div><h3 className='text-lg'>{blogs.data[2].title}</h3></div>
-            <div><p className='text-justify'>{blogs.data[2].content}</p></div>
+            <div><h3 className='text-lg'>{blogs == null? (<>loading</>):blogs.data[2].title}</h3></div>
+            <div><p className='text-justify'>{blogs == null? (<>loading</>):blogs.data[2].content}</p></div>
           </div>
 
         </div>
         <div className='bg-blue-400 w-1/3 h-fit p-4'>
           <div className='py-2'>
-            <div><h3 className='text-lg'>{blogs.data[0].title}</h3></div>
-            <div><p className='text-justify'>{blogs.data[0].content}</p></div>
+            <div><h3 className='text-lg'>{blogs == null? (<>loading</>):blogs.data[0].title}</h3></div>
+            <div><p className='text-justify'>{blogs == null? (<>loading</>):blogs.data[0].content}</p></div>
           </div>
           <div className='py-2'>
-            <div><h3 className='text-lg'>{blogs.data[1].title}</h3></div>
-            <div><p className='text-justify'>{blogs.data[1].content}</p></div>
+            <div><h3 className='text-lg'>{blogs == null? (<>loading</>):blogs.data[1].title}</h3></div>
+            <div><p className='text-justify'>{blogs == null? (<>loading</>):blogs.data[1].content}</p></div>
           </div>
         </div>
         <div className='bg-red-400 w-1/3 h-fit p-4'>
           <div className='py-2'>
-            <div><h3 className='text-lg'>{blogs.data[1].title}</h3></div>
-            <div><p className='text-justify'>{blogs.data[1].content}</p></div>
+            <div><h3 className='text-lg'>{blogs == null? (<>loading</>):blogs.data[1].title}</h3></div>
+            <div><p className='text-justify'>{blogs == null? (<>loading</>):blogs.data[1].content}</p></div>
           </div>
           <div className='py-2'>
-            <div><h3 className='text-lg'>{blogs.data[2].title}</h3></div>
-            <div><p className='text-justify'>{blogs.data[2].content}</p></div>
+            <div><h3 className='text-lg'>{blogs == null? (<>loading</>):blogs.data[2].title}</h3></div>
+            <div><p className='text-justify'>{blogs == null? (<>loading</>):blogs.data[2].content}</p></div>
           </div>
         </div>
 
