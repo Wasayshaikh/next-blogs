@@ -11,20 +11,23 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-    if(req.method == 'GET'){
+    if(req.method == "GET"){
         const {slug} = req.query;
         fs.readFile(`blog_data/${slug}.json`, "utf-8",(err, data)=>{
            if(err){
-            res.status(404).json({ status: 404, data:"file not found" })
+            return res.status(404).json({ status: 404, data:"file not found" })
            }
            else{
-            res.status(200).json({ status : 200, data: data })
+            return res.status(200).json({ status : 200, data: JSON.parse(data) })
            }
     
         })
       
     }
-    res.status(405).json({ status : 405, data: "method not supported" })
+    else{ 
+      return res.status(405).json({ status : 405, data: "method not supported" })
+    }
+   
 
     
 }
